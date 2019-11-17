@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Boston Recycles</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>-Boston Recycles-</h1>
+  <h3>Boston's #1 location for your recycled goods!</h3>
+  <!-- <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flilwizz.files.wordpress.com%2F2010%2F03%2Flibraries-12.png&f=1&nofb=1" alt=""> -->
+  <!-- <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80" alt=""> -->
+  <h2>Add Recycled Item Here</h2>
+
+  <form action="/messages" method="POST">
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Item you are Recycling..." name="msg">
+    <input type="text" placeholder="Email" name="email">
+    <input type="text" placeholder="City" name="city">
+    <button type="submit">Submit</button>
+  </form>
+
+
+
+  <h4>-Recent Posts-</h4>
+  <tbody>
+    <table>
+      <tr>
+        <th class="topRow">Name</th>
+        <th class="topRow">Recycled Item</th>
+        <th class="topRow">Email Address</th>
+        <th class="topRow">City</th>
+        <th class="topRow">Trash</th>
+      </tr>
+    <% for(var i=0; i<messages.length; i++) {%>
+      <tr>
+        <th class="topRow2"><%=messages[i].name%></th>
+        <th class="topRow2"><%=messages[i].msg%></th>
+        <th class="topRow2"><%=messages[i].email%></th>
+        <th class="topRow2"><%=messages[i].city%></th>
+        <th class="topRow2"><%=messages[i].thumbUp%></th>
+        <th><i class="fa fa-thumbs-up" aria-hidden="true"></i></th>
+        <th><i class="fa fa-trash" aria-hidden="true"></i></th>
+      </tr>
+    <% } %>
+    </table>
+  </tbody>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
